@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,400&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  background-color: #F2F2F2;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #3B5F41;
+  letter-spacing:2px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome img{
+  height: 70px;
+  margin-right: 24px;
+  display: flex;
+  border-radius: 50%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 24px;
+}
+
+main {
+  margin: 0 108px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: .2fr .7fr 1.2fr;
+  grid-template-areas: 
+    "header header"
+    "status status"
+    "settings controls"
+  ;
+  gap: 36px;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status {
+  grid-area: status;
+  background-color: aquamarine;
+}
+
+.settings {
+  grid-area: settings;
+  background-color: darkkhaki;
+}
+
+.controls {
+  grid-area: controls;
+  background-color: bisque;
+}
+
+.container {
+  background-color: white;
+  padding: 48px;
+  border-radius: 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  margin: 24px 0;
+}
+.values {
+  text-align: center;
+  margin: 12px 0;
+}
+
+.settings .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 24px;
+}
+
+
+.controls{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #3B5F41;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #3B5F41;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+button{
+  margin: 0px 12px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 300;
+  border: none;
+  background-color: #3B5F41;
+  color: white;
+  cursor: pointer;
+  min-width: 72px;
+}
+
+button:active {
+  background-color: #3b5f418f;
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .welcome{
+    flex-direction: column;
+  }
+
+  .settings .content{
+   display: flex;
+   flex-direction: column; 
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .controls > *{
+    margin: 24px 0;
+  }
+
+  h2{
+    text-align: center;
+  }
+
+  button{
+    margin: 0 6px;
+  }
+}
