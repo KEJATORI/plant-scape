@@ -39,4 +39,4 @@ wss.on("connection", (ws) => {
 
 })
 
-server.listen(8080, () => console.log("running on port 8080"));
+server.listen(process.env.PORT || 8080);

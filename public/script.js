@@ -15,7 +15,7 @@ const cover = document.querySelector("#cover");
 
 let sensorData;
 
-const socket = new WebSocket('ws://192.168.1.13:8080');
+const socket = new WebSocket();
 socket.addEventListener("open", () => {
   console.log("Connected To Server");
 });
