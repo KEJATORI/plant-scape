@@ -14,8 +14,8 @@ const water = document.querySelector("#water");
 const cover = document.querySelector("#cover");
 
 let sensorData;
-
-const socket = new WebSocket();
+var HOST = location.origin.replace(/^http/, 'ws')
+const socket = new WebSocket(HOST);
 socket.addEventListener("open", () => {
   console.log("Connected To Server");
 });
