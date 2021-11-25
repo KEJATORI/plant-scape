@@ -5,16 +5,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>PlantScape</title>
+  <link rel="icon" href="logo.svg" type=”image/svg+xml”>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
+  <img src="Vector.svg" alt="" id="vect1">
+  <img src="Vector.svg" alt="" id="vect2">
+  <img src="Vector.svg" alt="" id="vect3">
+  <img src="Vector.svg" alt="" id="vect4">
+  <img src="Vector.svg" alt="" id="vect5">
+  <div id="home"></div>
+  <nav>
+    <a href="#home"><span class="material-icons">home</span></a>
+    <a href="#status"><span class="material-icons">sensors</span></a>
+    <a href="#settings"><span class="material-icons">settings</span></a>
+    <a href="#controls"><span class="material-icons">keyboard</span></a>
+  </nav>
 
   <div class="wrapper">
     <main>
       <div class="header">
-        <div>
+        <div class="hero">
+          <img src="logo.svg" alt="">
           <h2>PLANTSCAPE</h2>
         </div>
         <div class="welcome">
@@ -23,7 +38,7 @@
         </div>
       </div>
 
-      <div class="container status">
+      <div class="container status" id="status">
         <div class="title">
           <span class="online"></span>
           <h2>Plant Status</h2>
@@ -42,13 +57,13 @@
             <h3>Heat Index</h3>
           </div>
           <div class="values">
-            <h1><span  id="soilMoisture">0</span>%</h1>
+            <h1><span id="soilMoisture">0</span>%</h1>
             <h3>Soil Moisture</h3>
           </div>
         </div>
       </div>
 
-      <div class="container settings">
+      <div class="container settings" id="settings">
         <div class="title">
           <h2>Device Settings</h2>
         </div>
@@ -58,21 +73,21 @@
             <h3>Soil Moisture Threshold</h3>
           </div>
           <div class="values">
-            <h1><span id="isAutoWater">False</span></h1>
+            <h1><span id="isAutoWater">No</span></h1>
             <h3>Auto Water</h3>
           </div>
           <div class="values">
-            <h1><span id="isCover">False</span></h1>
+            <h1><span id="isCover">No</span></h1>
             <h3>Covered</h3>
           </div>
           <div class="values">
-            <h1><span id="isWater">False</span></h1>
+            <h1><span id="isWater">Yes</span></h1>
             <h3>Watering</h3>
           </div>
         </div>
       </div>
 
-      <div class="container controls">
+      <div class="container controls" id="controls">
         <div class="title">
           <h2>Controls</h2>
         </div>
@@ -93,8 +108,10 @@
         </div>
         <div class="control">
           <h4>Threshold</h4>
-          <button id="thresholdSub">-</button>
-          <button id="thresholdAdd">+</button>
+          <div>
+            <button id="thresholdSub">-</button>
+            <button id="thresholdAdd">+</button>
+          </div>
         </div>
         <div class="control">
           <button id="water">Water</button>
@@ -106,6 +123,17 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

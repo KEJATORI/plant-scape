@@ -32,13 +32,13 @@ h4 {
   font-weight: 600;
 }
 
-.welcome {
+.header > div{
   display: flex;
   align-items: center;
   text-align: center;
 }
 
-.welcome img{
+.header img{
   height: 70px;
   margin-right: 24px;
   display: flex;
@@ -47,11 +47,42 @@ h4 {
 
 .wrapper {
   margin: 0 auto;
-  padding: 24px;
+}
+
+nav {
+  position: fixed;
+  width: 100px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #3B5F41;
+}
+
+nav a {
+  margin: 24px 0;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+nav a .material-icons{
+  font-size: 48px;
+}
+
+nav a .material-icons:hover{
+  color: #cfcece;
+  transform: scale(1.2);
 }
 
 main {
-  margin: 0 108px;
+  padding: 48px 120px;
+  margin-left: 100px;
+  grid-area: main;
   height: 100vh;
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -122,6 +153,10 @@ main {
   align-items: center;
 }
 
+.control div {
+  display: flex;
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -179,7 +214,6 @@ input:checked + .slider:before {
 
 button{
   margin: 0px 12px;
-  width: 100%;
   padding: 12px;
   border-radius: 10px;
   font-size: 18px;
@@ -188,6 +222,7 @@ button{
   background-color: #3B5F41;
   color: white;
   cursor: pointer;
+  width: 100%;
   min-width: 72px;
 }
 
@@ -195,11 +230,49 @@ button:active {
   background-color: #3b5f418f;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1080px) {
   main {
-  margin: 0px;
-  display: flex;
-  flex-direction: column;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 48px 24px;
+  }
+
+  .status .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .controls > *{
+    margin: 24px 0;
+  }
+
+  h2{
+    text-align: center;
+  }
+
+  button{
+    margin: 0 6px;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: row;
+    height: 100px;
+    width: 100%;
+  }
+  
+  main {
+    margin-top: 100px;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 48px 12px;
   }
 
   .header {
@@ -215,7 +288,8 @@ button:active {
    flex-direction: column; 
   }
 
-  .content {
+  .status .content {
+    display: flex;
     flex-direction: column;
   }
 
@@ -230,4 +304,48 @@ button:active {
   button{
     margin: 0 6px;
   }
+}
+
+#vect1{
+  margin-top:1px ;
+  margin-left: 925px;
+  transform: rotate(-90deg);
+  height: 790px;
+  width: 534px;
+  position: fixed;
+  z-index: -1;
+}
+#vect2{
+  margin-top:225px;
+  margin-left: 20px;
+  transform: rotate(180deg);
+  width: 800px;
+  height: 400px;
+  z-index: -1;
+  position: fixed;
+}
+#vect3{
+  margin-top: 400px;
+  margin-left: 200px;
+  transform: rotate(-10deg);
+  width: 1050px;
+  height: 550px;
+  z-index: -1;
+  position: fixed;
+}
+#vect4{
+  margin-top:620px ;
+  margin-left: 25px;
+  transform: rotate(180deg);
+  width: 650px;
+  height: 350px;
+  position: fixed;
+  z-index: -1;
+}
+#vect5{
+  position: fixed;
+  z-index: -1;
+  margin-left: 630px;
+  margin-top: 120px;
+  transform: rotate(-90deg);
 }
