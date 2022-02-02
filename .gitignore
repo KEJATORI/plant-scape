@@ -1,6 +1,6 @@
 #arduino code
-sensor-client/
-sensor-client-secure/
+# sensor-client/
+# sensor-client-secure/
 
 # Logs
 logs

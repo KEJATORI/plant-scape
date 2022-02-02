@@ -1,0 +1,14 @@
+clientType = sensor/web
+
+[table]
+humidity
+temperature
+soilMoisture
+
+[number]
+soilMoistureThreshold
+
+[switch button]
+isAutoWater
+isWater
+isCover
